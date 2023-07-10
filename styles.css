@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* Global rules */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+}
+
+/* Grid section */
+.testimonials-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 2em;
+}
+
+.review-card {
+    padding: 2em;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.review-card--violet {
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+    background-color: hsl(263, 55%, 52%);
+}
+
+.review-card--gray {
+    background-color: hsl(217, 19%, 35%);
+}
+
+.review-card--black {
+    background-color: hsl(219, 29%, 14%);
+}
+
+.review-card--white {
+    background-color: white;
+    color: hsl(217, 19%, 35%);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.card-header img {
+    border-radius: 100%;
+    border: 1px solid white;
+    width: 35px;
+    height: 35px;
+}
+
+.review-card--black img {
+    border: 2px solid hsl(263, 55%, 52%);
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.user-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 50%;
+}
+
+.review {
+    margin: 1em auto;
+    font-size: 1.37rem;
+    font-weight: 600;
+}
+
+.quote {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 70%;
+}
+
+@media (min-width: 700px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .review-card:nth-child(1) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .review-card:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;
+    }
+
+    .review-card:nth-child(4) {
+        grid-row: 2;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .review-card:nth-child(5) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column: 4;
+    }
+}
